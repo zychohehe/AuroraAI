@@ -11,51 +11,50 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Palet "Aurora"
-val Ink = Color(0xFF07050F)
-val InkSoft = Color(0xFF0E0A1C)
-val Violet = Color(0xFF7C5CFF)
-val Pink = Color(0xFFFF5CAA)
-val Cyan = Color(0xFF22D3EE)
-val TextPrimary = Color(0xFFF4F1FF)
-val TextMuted = Color(0xFFA79FC4)
-val ErrorTint = Color(0xFFFF6B8A)
+// Palet "Midnight & Champagne": gelap pekat, aksen emas lembut, teks putih hangat.
+val Ink = Color(0xFF09090E)
+val InkDeep = Color(0xFF0D0D15)
+val Surface1 = Color(0xFF111118)
+val Surface2 = Color(0xFF1A1A23)
+val CodeBg = Color(0xFF0C0C12)
 
-val GlassFill = Color.White.copy(alpha = 0.07f)
-val GlassStroke = Color.White.copy(alpha = 0.12f)
+val Gold = Color(0xFFD9B97B)
+val GoldDeep = Color(0xFFB8935A)
+val GoldSoft = Color(0xFFF1E1BC)
+val Indigo = Color(0xFF3A3F8F)
 
-val AuroraBrush = Brush.linearGradient(listOf(Violet, Pink))
-val AuroraBrushWide = Brush.linearGradient(listOf(Cyan, Violet, Pink))
+val TextPrimary = Color(0xFFECE8DF)
+val TextMuted = Color(0xFF8D8998)
+val OnGold = Color(0xFF1B1409)
+val ErrorTint = Color(0xFFFF8A9B)
+val Hairline = Color.White.copy(alpha = 0.09f)
+
+val GoldBrush = Brush.linearGradient(listOf(GoldSoft, Gold, GoldDeep))
+val SerifFont = FontFamily.Serif
 
 private val Scheme = darkColorScheme(
-    primary = Violet,
-    secondary = Pink,
-    tertiary = Cyan,
+    primary = Gold,
+    secondary = GoldDeep,
+    tertiary = GoldSoft,
     background = Ink,
-    surface = InkSoft,
-    onPrimary = Color.White,
+    surface = Surface1,
+    onPrimary = OnGold,
     onBackground = TextPrimary,
     onSurface = TextPrimary
 )
 
 private val AuroraTypography = Typography(
-    headlineLarge = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.ExtraBold,
-        fontSize = 38.sp,
-        letterSpacing = (-1).sp
-    ),
     titleMedium = TextStyle(
-        fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Bold,
-        fontSize = 18.sp,
-        letterSpacing = 0.2.sp
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 19.sp,
+        letterSpacing = 0.3.sp
     ),
     bodyLarge = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp
+        lineHeight = 25.sp
     ),
     bodyMedium = TextStyle(
         fontFamily = FontFamily.SansSerif,
@@ -66,7 +65,8 @@ private val AuroraTypography = Typography(
     labelSmall = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Medium,
-        fontSize = 12.sp
+        fontSize = 12.sp,
+        letterSpacing = 0.3.sp
     )
 )
 

@@ -11,18 +11,15 @@ android {
         applicationId = "com.aurora.ai"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            // R8 dimatikan supaya build lebih aman dan tidak ada surprise saat runtime.
+            isMinifyEnabled = false
+            isShrinkResources = false
             // Ditandatangani dengan debug key supaya APK release langsung bisa di-install.
             signingConfig = signingConfigs.getByName("debug")
         }
@@ -55,6 +52,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material3:material3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 }
