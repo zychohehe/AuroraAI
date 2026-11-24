@@ -734,6 +734,29 @@ private fun ActionChip(label: String, onClick: () -> Unit, modifier: Modifier = 
 
 @Composable
 private fun TypingRow() {
+    var secs by remember { mutableStateOf(0) }
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(1000)
+            secs++
+        }
+    }
+    Column {
+        TypingDots()
+        if (secs >= 8) {
+            Text(
+                if (secs < 25) "Menunggu server… $secs dtk"
+                else "Server lambat ($secs dtk). Tunggu, atau tekan tombol jeda untuk membatalkan.",
+                style = MaterialTheme.typography.labelSmall,
+                color = TextMuted,
+                modifier = Modifier.padding(start = 38.dp)
+            )
+        }
+    }
+}
+
+@Composable
+private fun TypingDots() {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         AvatarOrb(28)
         Spacer(Modifier.size(10.dp))

@@ -47,7 +47,7 @@ object AiApi {
         }
         // Percobaan 2: hanya pesan terbaru, dengan retry.
         val plain = (if (indoReply) HINT else "") + prompt
-        return fetchWithRetry(plain, attempts = 3)
+        return fetchWithRetry(plain, attempts = 2)
     }
 
     private fun buildWithContext(prompt: String, history: List<Msg>, indo: Boolean): String {
@@ -93,7 +93,7 @@ object AiApi {
         try {
             conn.requestMethod = "GET"
             conn.connectTimeout = 15_000
-            conn.readTimeout = 60_000
+            conn.readTimeout = 90_000
             conn.instanceFollowRedirects = true
             conn.setRequestProperty("User-Agent", USER_AGENT)
             conn.setRequestProperty("Accept", "application/json, text/plain, */*")
