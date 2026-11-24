@@ -421,13 +421,13 @@ private fun AppDrawer(vm: ChatViewModel, onClose: () -> Unit) {
                 title = "Ingat konteks obrolan",
                 desc = "Kirim beberapa pesan sebelumnya agar AI nyambung",
                 checked = vm.useContext,
-                onChange = vm::setUseContext
+                onChange = vm::changeUseContext
             )
             SettingRow(
                 title = "Balas Bahasa Indonesia",
                 desc = "Arahkan AI menjawab dalam bahasa Indonesia",
                 checked = vm.indoReply,
-                onChange = vm::setIndoReply
+                onChange = vm::changeIndoReply
             )
 
             Spacer(Modifier.height(6.dp))

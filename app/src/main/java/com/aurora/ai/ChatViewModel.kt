@@ -186,12 +186,12 @@ class ChatViewModel(app: Application) : AndroidViewModel(app) {
         persist()
     }
 
-    fun setUseContext(v: Boolean) {
+    fun changeUseContext(v: Boolean) {
         useContext = v
         store.useContext = v
     }
 
-    fun setIndoReply(v: Boolean) {
+    fun changeIndoReply(v: Boolean) {
         indoReply = v
         store.indoReply = v
     }
